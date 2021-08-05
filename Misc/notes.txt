@@ -1,0 +1,3 @@
+Websites to find out EXIF info:
+1) http://exif.regex.info/exif.cgi
+2) http://exifdata.com/
