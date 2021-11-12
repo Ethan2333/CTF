@@ -1,0 +1,24 @@
+HTB Challenges:
+
+1) USB Ripper
+There are 2 files given.
+  1) auth.json
+  2) syslog
+Solution
+  -> First download usbrip from https://github.com/snovvcrash/usbrip
+  -> Then open Terminal at working directory
+  -> Type $ usbrip events violations auth.json --file ./syslog
+  -> We will get a list of USB Violation Events. (Including Product, Manufacturer and Serial Number, etc.)
+  -> Copy the Serial Number and send to hash decoder.
+  -> We will get get the word "mychemicalromance"
+  -> Flag: HTB{mychemicalromance}
+  
+  2) Illumination
+  There are 2 files given.
+  Solution
+    -> $ ls -la    //List all files in the directory.
+    -> $ cd .git   //Change to .git directory
+    -> $ git log   //Show log history
+    -> $ git show (suspicious commit)
+    -> Copy the hash highlighted in red.
+    -> Send to hash decoder and we will get the flag.
