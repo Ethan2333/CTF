@@ -10,3 +10,7 @@ Python Modules Requirement:
 5) requests
 6) libnum
 7) sagemath
+
+#Essential Tools
+
+-> Wine //Convert windows app to linux
