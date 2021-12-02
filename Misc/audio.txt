@@ -1,0 +1,11 @@
+There are challenges that give you an audio file such as .wav file
+  -In this case, we can use Audacity or any other software to analyse the file (such as Sonic Visualize).
+  
+  Morse Code
+    -The audio can be trying to give you morse code
+    -Use online morse code audio decoder to decode
+    -https://morsecode.world/international/decoder/audio-decoder-expert.html
+    
+  Spectrogram
+    -Sometimes, we have to view spectrogram of the sound file to see the hidden texts
+    -We can use Audacity to view this.
