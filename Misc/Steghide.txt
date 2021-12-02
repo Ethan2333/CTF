@@ -1,2 +1,4 @@
 Website to dipher steghide of image:
 1) https://futureboy.us/stegano/decinput.html
+
+Or we can also use steghide tool in Kali Linux
